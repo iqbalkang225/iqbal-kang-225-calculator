@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;600;700;800&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  color: #fff;
+  background: linear-gradient(#0e1c26, #2a454b, #294861);
+  height: 100vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  max-width: 210px;
+  /* width: 100%; */
+  flex: 1;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+/* .history-box{
+  position: absolute;
+  left: -210px;
+  top: 0;
+  width: 210px;
+  height: 100%;
+  background-color: red;
+} */
+
+.result-box{
+  background-color: #fff;
+  text-align: right;  
+  padding: 15px;
+}
+
+.equation{
+  font-size: 12px;
+  color: #777;
+  height: 22px;
+  display: inline-block;
+}
+
+.result{
+  font-size: 26px;
+ font-weight: 100;
+ color: #000;
+}
+
+.buttons{
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0,0,0,.5);
+  background-color: #252833;
+  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.buttons::before,
+.buttons::after{
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 12px;
+  background-color: #1d212e;
+}
+
+.buttons::before{
+  left: -12px;
+  z-index: 10;
+}
+
+.buttons::after{
+  right: -12px;
+}
+
+.btn{
+  background-color: #252833;
+  padding: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn:hover{
+  cursor: pointer;
+  background-color: #343847;
+}
+
+.btn:active{
+  transform: scale(.9);
+}
+
+
+.btn-calc{
+  background: linear-gradient(to right bottom, #F9655B, #EE821A);
+  padding: 10px;
+}
+
+.btn-calc:hover{
+  background: linear-gradient(to left top, #F9655B, #EE821A);
+}
+
+.btn-calc:active{
+  transform: none;
+}
