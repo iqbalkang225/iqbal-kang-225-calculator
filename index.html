@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./styles.css">
-
-</head>
-<body>
-  <main class="container">
-
-    <!-- History
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <!-- History
       <div class="history-box">
       <p class="history-title">History</p>
       <p class="history"></p>
 
     </div> -->
 
-    <!-- Result display -->
-    <div class="result-box">
+      <!-- Result display -->
+      <div class="result-box">
+        <p><span class="equation"></span></p>
+        <p><span class="result">0</span></p>
+      </div>
 
-      <p> <span class="equation"></span> </p>
-      <p> <span class="result">0</span> </p>
-    </div>
+      <!-- Buttons section -->
+      <div class="buttons">
+        <p class="btn"><span class="clear">C</span></p>
+        <p class="btn"><span class="history">H</span></p>
+        <p class="btn operator"><span class="modulo">%</span></p>
+        <p class="btn operator"><span class="delete"> &larr; </span></p>
 
-    <!-- Buttons section -->
-    <div class="buttons">
-      <p class="btn"> <span class="clear">C</span> </p>
-      <p class="btn"> <span class="history">H</span> </p>
-      <p class="btn operator"> <span class="modulo">%</span> </p>
-      <p class="btn operator"> <span class="delete"> &larr; </span> </p>
+        <p class="btn operand"><span class="7">7</span></p>
+        <p class="btn operand"><span class="8">8</span></p>
+        <p class="btn operand"><span class="9">9</span></p>
+        <p class="btn operator"><span class="divide">/</span></p>
 
-      <p class="btn"> <span class="7">7</span> </p>
-      <p class="btn"> <span class="8">8</span> </p>
-      <p class="btn"> <span class="9">9</span> </p>
-      <p class="btn operator"> <span class="divide">/</span> </p>
+        <p class="btn operand"><span class="4">4</span></p>
+        <p class="btn operand"><span class="5">5</span></p>
+        <p class="btn operand"><span class="6">6</span></p>
+        <p class="btn operator"><span class="times">*</span></p>
 
-      <p class="btn"> <span class="4">4</span> </p>
-      <p class="btn"> <span class="5">5</span> </p>
-      <p class="btn"> <span class="6">6</span> </p>
-      <p class="btn operator"> <span class="times">*</span> </p>
+        <p class="btn operand"><span class="1">1</span></p>
+        <p class="btn operand"><span class="2">2</span></p>
+        <p class="btn operand"><span class="3">3</span></p>
+        <p class="btn operator"><span class="minus">-</span></p>
 
-      <p class="btn"> <span class="1">1</span> </p>
-      <p class="btn"> <span class="2">2</span> </p>
-      <p class="btn"> <span class="3">3</span> </p>
-      <p class="btn operator"> <span class="minus">-</span> </p>
-     
-      <p class="btn"> <span class="0">0</span> </p>
-      <p class="btn"> <span class="zeros">00</span> </p>
-      <p class="btn"> <span class="point">.</span> </p>
-      <p class="btn operator"> <span class="plus">+</span> </p>      
-    </div>
+        <p class="btn operand"><span class="0">0</span></p>
+        <p class="btn operand"><span class="zeros">00</span></p>
+        <p class="btn operand"><span class="point">.</span></p>
+        <p class="btn operator"><span class="plus">+</span></p>
+      </div>
 
-    <!-- Calculate button -->
-    <div class="calculate-btn">
-      <p class="btn btn-calc"> <span class="calculate">=</span> </p>
-    </div>
-
-  </main>
-  <script src="./app.js"></script>
-</body>
+      <!-- Calculate button -->
+      <div class="calculate-btn">
+        <p class="btn btn-calc calculate"><span>=</span></p>
+      </div>
+    </main>
+    <!-- <script src="./app1.js"></script> -->
+    <script src="./app.js"></script>
+  </body>
 </html>
