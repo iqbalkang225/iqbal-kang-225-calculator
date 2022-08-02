@@ -7,29 +7,38 @@ const operators = document.querySelectorAll(".operator");
 let operand1 = "";
 let operand2 = "";
 let operation = "";
-let result;
+let result = 0;
+
+// Assigning Values to operands
+const assignValue = function (e) {
+  const val = e.target.textContent;
+  if (operand2.includes(".") && val === ".") return;
+  operand2 += val;
+  equationEl.textContent = operand1 + operation + operand2;
+};
 
 numbers.forEach((num) => {
-  num.addEventListener("click", (e) => {
-    if (operand2.includes(".") && e.target.textContent === ".") return;
-    operand2 += e.target.textContent;
-    equationEl.textContent = operand1 + operation + operand2;
-  });
+  num.addEventListener("click", assignValue);
 });
 
-const operationHandler = function (operator) {
+// Function to remove Last Character
+const removeLastChar = (content) => {
+  return content.substring(0, content.length - 1);
+};
+
+// =============================================
+
+// Assigning operator
+const assignOperator = function (e) {
+  calculate();
+  const operator = e.target.textContent;
   if (operation) {
     operation = operator;
-    let newEquationEl = equationEl.textContent.substring(
-      0,
-      equationEl.textContent.length - 1
-    );
-    newEquationEl += operation;
-    equationEl.textContent = newEquationEl;
+    equationEl.textContent = removeLastChar(equationEl.textContent) + operation;
   } else if (result) {
+    operand1 = result;
     operation = operator;
     equationEl.textContent = result + operation;
-    operand1 = result;
     operand2 = "";
   } else {
     operation = operator;
@@ -40,31 +49,26 @@ const operationHandler = function (operator) {
 };
 
 operators.forEach((operator) => {
-  operator.addEventListener("click", (e) => {
-    operationHandler(e.target.textContent);
-  });
+  operator.addEventListener("click", assignOperator);
 });
 
-calculateEl.addEventListener("click", (e) => {
+// =============================================
+
+const calculate = function () {
   let num1 = Number(operand1);
   let num2 = Number(operand2);
-
   if (num1 && num2) {
-    if (operation === "+") {
-      result = num1 + num2;
-    } else if (operation === "-") {
-      result = num1 - num2;
-    } else if (operation === "*") {
-      result = num1 * num2;
-    } else if (operation === "/") {
-      result = num1 / num2;
-    } else if (operation === "%") {
-      result = num1 % num2;
-    }
+    if (operation === "+") result = num1 + num2;
+    else if (operation === "-") result = num1 - num2;
+    else if (operation === "*") result = num1 * num2;
+    else if (operation === "/") result = num1 / num2;
+    else if (operation === "%") result = num1 % num2;
 
     resultEl.textContent = result;
     operand1 = "";
     operand2 = "";
     operation = "";
   }
-});
+};
+
+calculateEl.addEventListener("click", calculate);
