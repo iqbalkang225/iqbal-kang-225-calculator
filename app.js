@@ -14,6 +14,9 @@ let operand2 = "";
 let operation = "";
 let result = 0;
 
+const audio = new Audio();
+audio.src = "./keypress.mp3";
+
 // Function to print history
 const printHistory = function () {
   const history = document.createElement("p");
@@ -33,12 +36,16 @@ const assignValue = function (val) {
 
 numbers.forEach((num) => {
   num.addEventListener("click", (e) => {
+    audio.play();
     assignValue(e.target.textContent);
   });
 });
 
 window.addEventListener("keydown", (e) => {
-  if (e.key >= 0 && e.key <= 9) assignValue(e.key);
+  if (e.key >= 0 && e.key <= 9) {
+    audio.play();
+    assignValue(e.key);
+  }
   if (
     e.key === "+" ||
     e.key === "-" ||
@@ -56,6 +63,7 @@ window.addEventListener("keydown", (e) => {
 
 // Assigning operator
 const assignOperator = function (operator) {
+  audio.play();
   calculate();
   if (operation) {
     operation = operator;
@@ -82,6 +90,7 @@ operators.forEach((operator) => {
 // =============================================
 
 const calculate = function () {
+  audio.play();
   let num1 = Number(operand1);
   let num2 = Number(operand2);
   if (num1 && num2) {
@@ -112,6 +121,7 @@ const removeLastChar = (content) => {
 };
 
 const backspace = function () {
+  audio.play();
   equationEl.textContent = removeLastChar(equationEl.textContent);
   if (operand2) {
     operand2 = removeLastChar(operand2);
@@ -128,6 +138,7 @@ deletion.addEventListener("click", backspace);
 
 // Resetting Functionality
 clear.addEventListener("click", () => {
+  audio.play();
   operand1 = "";
   operand2 = "";
   operation = "";
@@ -140,5 +151,6 @@ clear.addEventListener("click", () => {
 // =============================================
 
 historyBtn.addEventListener("click", () => {
+  audio.play();
   historyBox.classList.toggle("active");
 });
