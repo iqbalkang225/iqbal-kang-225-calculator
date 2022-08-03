@@ -27,14 +27,55 @@ body {
   position: relative;
 }
 
-/* .history-box{
+.history-box {
   position: absolute;
-  left: -210px;
+  left: 0px;
   top: 0;
   width: 210px;
   height: 100%;
-  background-color: red;
-} */
+  background-color: #25283373;
+  font-size: 14px;
+  z-index: -1;
+  transition: all 0.25s;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.history-box.active {
+  left: -210px;
+}
+
+.history-title {
+  padding: 20px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.461);
+}
+
+.history-content {
+  overflow-y: scroll;
+  line-height: 1.6;
+}
+
+.history-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.history-content::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}
+
+.history {
+  padding: 5px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.461);
+}
+
+.history::after {
+  content: "";
+}
 
 .result-box {
   background-color: #fff;
@@ -43,10 +84,11 @@ body {
 }
 
 .equation {
-  font-size: 12px;
-  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  color: #555;
   height: 22px;
-  display: inline-block;
+  display: block;
 }
 
 .result {
@@ -103,6 +145,10 @@ body {
 .btn-calc {
   background: linear-gradient(to right bottom, #f9655b, #ee821a);
   padding: 10px;
+}
+
+.btn-calc span {
+  transform: scale(2.5, 2);
 }
 
 .btn-calc:hover {
